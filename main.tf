@@ -54,7 +54,9 @@ locals {
 }
 
 data "aws_region" "current" {}
-data "google_project" "project" {}
+data "google_project" "project" {
+  provider = google-beta
+}
 
 resource "random_string" "suffix" {
   length  = 10
